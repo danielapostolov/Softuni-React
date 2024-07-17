@@ -1,10 +1,20 @@
+import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
-import './styles.css'
+import UserSection from './components/user-section/userSection'
 
+import './styles.css'
+ 
 function App() {
     return (
         <>
             <Header />
+
+            <main  className="main">
+            <UserSection />
+            </main>
+                
+
+            <Footer />
         </>
     )
 }
