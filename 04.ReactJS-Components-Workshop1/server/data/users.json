@@ -46,5 +46,21 @@
       "street": "456 Elm St",
       "streetNumber": "7"
     }
+  },
+  "2e9c1668-66b4-4b2f-97ab-12be8a6100cd": {
+    "firstName": "Daniel",
+    "lastName": "Apostolov",
+    "email": "daniel@gmail.com",
+    "phoneNumber": "08999999123",
+    "createdAt": "2024-07-01T07:22:00.358Z",
+    "updatedAt": "2024-07-01T07:22:00.358Z",
+    "imageUrl": "https://softuni.bg/users/profile/showavatar/410173d0-f7b8-4886-87c7-f4deec1f6b93",
+    "address": {
+      "country": "България",
+      "city": "Перник",
+      "street": " Ю. Гагарин",
+      "streetNumber": "5"
+    },
+    "_id": "2e9c1668-66b4-4b2f-97ab-12be8a6100cd"
   }
 }
