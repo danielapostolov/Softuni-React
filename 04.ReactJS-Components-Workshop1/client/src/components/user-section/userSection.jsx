@@ -3,12 +3,14 @@ import Pagination from "../pagination/Pagination";
 import Search from "../search/Search";
 import UserList from "./user-list/UserList";
 import UserAdd from "./user-add/UserAdd";
+import UserDetails from "./user-details/UserDetails";
 
 const baseURL = 'http://localhost:3030/jsonstore'
 
 export default function UserSection() {
     const [users, setUsers] = useState([]);
     const [showAddUser, setShowAddUser] = useState(false);
+    const [showDetails, setShowDetails] = useState(false);
 
     //TODO
 
@@ -45,7 +47,7 @@ export default function UserSection() {
         const userData = {
             ...Object.fromEntries(formData),
             createdAt: new Date().toISOString(),
-            createdAt: new Date().toISOString()
+            updatedAt: new Date().toISOString()
         };
         //make post request
         const response = await fetch(`${baseURL}/users`, {
@@ -65,16 +67,32 @@ export default function UserSection() {
 
     }
 
+    const userDetailsClickHandler = () => {
+        setShowDetails(true);
+    }
+
+    const closeUserDetailsHandler = () => {
+        setShowDetails(false);
+    }
+
     return (
         <section className="card users-container">
             <Search />
 
             <UserList users={users} />
 
-            {showAddUser && <UserAdd
-                onClose={addUserCloseHandler}
-                onSave={addUserSaveHandler}
-            />}
+            {showAddUser && (
+                <UserAdd
+                    onClose={addUserCloseHandler}
+                    onSave={addUserSaveHandler}
+                />
+            )}
+
+            {showDetails && (
+                <UserDetails
+
+                />
+            )}
 
             {/* <!-- New user button  --> */}
             <button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
